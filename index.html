@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+<meta property='og:title' content='GigaGAN for Text-to-Image Synthesis. CVPR2023'/>
+<meta property='og:image' content='https://mingukkang.github.io/GigaGAN/static/images/thumbnail.jpg'/>
+<meta property='og:description' content='a 1B parameter large scale GAN for text-to-image synthesis task. CVPR2023'/>
+<meta property='og:url' content='https://mingukkang.github.io/GigaGAN/'/>
+<meta property='og:image:width' content='1200' />
+<meta property='og:image:height' content='663' />
+<!-- TYPE BELOW IS PROBABLY: 'website' or 'article' or look on https://ogp.me/#types -->
+<meta property="og:type" content='website'/>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9VZKE74FPW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-9VZKE74FPW');
+</script>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="3D Volumetric Super-Resolution in Radiology Using 3D RRDB-GAN">
+  <meta name="keywords" content="3D Volumetric Super-Resolution in Radiology Using 3D RRDB-GAN">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3D Volumetric Super-Resolution in Radiology Using 3D RRDB-GAN</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/tab_gallery.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="stylesheet" href="juxtapose/css/juxtapose.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/magnifier.js"></script>
+  <link href="https://fonts.cdnfonts.com/css/menlo" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/image_card_fader.css">
+  <link rel="stylesheet" href="./static/css/image_card_slider.css">
+
+</head>
+
+<style>
+  @import url('https://fonts.cdnfonts.com/css/menlo');
+</style>
+
+
+<body>
+  <section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">3D Volumetric Super-Resolution in Radiology Using 3D RRDB-GAN</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://juhha.github.io//">Juhyung (Tony) Ha</a><sup>1</sup>,</span>
+            <span class="author-block">
+              Nian Wang<sup>2,3</sup>,</span>
+            <span class="author-block">
+              Surendra Maharjan<sup>2</sup>,
+            </span>
+            <span class="author-block">
+              Xuhong Zhang<sup>1</sup>,
+            </span>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Luddy Computer Science Department, Indiana University,</span>
+            <span class="author-block"><sup>2</sup>Department of Radiology and Imaging Sciences, Indiana University,</span>
+            <span class="author-block"><sup>3</sup>Stark Neurosciences Research Institute, Indiana University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+<!--               <span class="link-block">
+                <a href="static/paper/gigagan_cvpr2023_compressed1.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper (low-res, 16MB)</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="static/paper/gigagan_cvpr2023_original1.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper (high-res, 49MB)</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2303.05511"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <br> -->
+              <!-- Video Link. -->
+<!--               <span class="link-block">
+                <a href="https://youtu.be/ZjxtuDQkOPY"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Video Link. -->
+<!--               <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=UyoXmHS-KGc"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Two Minute Papers</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/mingukkang/GigaGAN/tree/main/evaluation"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Evaluation</span>
+                  </a>
+              </span>
+<!--               <span class="link-block">
+                <a href="#bibtex"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-obp"></i>
+                  </span>
+                  <span>BibTex</span>
+                </a>
+              </span>
+ -->            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              This study introduces the 3D Residual-in-Residual Dense Block GAN (3D RRDB-GAN) for 3D super-resolution for radiology imagery. A key aspect of 3D RRDB-GAN is the integration of a 2.5D perceptual loss function, which con- tributes to improved volumetric image quality and realism. The effectiveness of our model was evaluated through 4x super-resolution experiments across diverse datasets, includ- ing Mice Brain MRH, OASIS, HCP1200, and MSD-Task-6. These evaluations, encompassing both quantitative metrics like LPIPS and FID and qualitative assessments through sample visualizations, demonstrate the model’s effectiveness in detailed image analysis. The 3D RRDB-GAN offers a significant contribution to medical imaging, particularly by enriching the depth, clarity, and volumetric detail of medical images. Its application shows promise in enhancing the in- terpretation and analysis of complex medical imagery from a comprehensive 3D perspective.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+      <h2 class="title is-3">Result 4 different datasets</h2>
+      <div class="content has-text-justified">
+        <p>
+          Here we present visualization results of a subject in 3D views (axial, coronal, and sagittal) from 4 datasets and 4 methods. Top row with 3 images show holistic views of subject, and 3 rows below show detailed view of zoomed-in patches in the red box in HR. Low-resolution (LR) was used as an input to the models. For visual purpose, trilinear interpolation was performed to LR to match the resolution with others. High-resolution (HR) is a ground-truth imaging, and others are generated by multiple deep-learning based models.
+        </p>
+      </div>
+
+      <h3 class="title is-4">OASIS</h3>
+      <div class="content has-text-justified">
+        <p>
+          From <b>OASIS</b> dataset, we used T1-weighted human brain MRI.
+        </p>
+      </div>
+      <div id="oasis" class="oasis">
+        <div class="item item-oasis">
+          <img id="oasis" src="./static/images/oasis_zoomed.png"
+          class="oasis"/>
+        </div>
+      </div>
+      <br>
+      <h3 class="title is-4">HCP1200</h3>
+      <div class="content has-text-justified">
+        <p>
+          From <b>HCP1200</b>, we used has T2-weighted human brain MRI.
+          <br> 
+        </p>
+      </div>
+      <br>
+      <div id="hcp1200" class="hcp1200">
+        <div class="item item-hcp1200">
+          <img id="hcp1200" src="./static/images/hcp1200_zoomed.png"
+          class="hcp1200"/>
+        </div>
+      </div>
+      <br>
+      <h3 class="title is-4">Mice Brain</h3>
+      <div class="content has-text-justified">
+        <p>
+          <b>Mice Brain</b> has mice brain Magnetic Resonance Histology (MRH) image.
+          <br> 
+        </p>
+      </div>
+      <div id="micebrain" class="micebrain">
+        <div class="item item-micebrain">
+          <img id="micebrain" src="./static/images/micebrain_zoomed.png"
+          class="micebrain"/>
+        </div>
+      </div>
+      <br>
+      <h3 class="title is-4">MSD Task 6</h3>
+      <div class="content has-text-justified">
+        <p>
+          <b>MSD Task 6</b> has human abdominal CT image. For the CT scans, voxel values were clipped bewteen 0 and 250 to add more contrasts for organs and bones.
+          <br> 
+        </p>
+      </div>
+      <div id="msd" class="msd">
+        <div class="item item-msd">
+          <img id="msd" src="./static/images/msd_zoomed.png"
+          class="msd"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <h2 class="title is-3">Sample output (LR vs. SR)</h2>
+      <div class="has-text-justified">
+      <p>
+        Here we show how our model super-resolve 3D medical images. We tested 4 different datasets including multiple modalities (T1, T2 MRI, CT, MRH), body regions (brain, abdomen), and species (human, mice). Left image is a low-resolution image used as an input to the model. Right image is a super-resolved output by the model.
+      </p>
+      </div>
+      <!-- The expanding image container -->
+      <div class="tab_container">
+        <!-- Close the image -->
+        <!-- <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span> -->
+
+        <!-- Expanded image -->
+        <div id="juxtapose-embed" data-startingposition="30%" data-animate="true">
+        </div>
+
+        <div>
+          <div id="juxtapose-hidden"></div>
+        </div>
+        
+        <!-- Image text -->
+        <div id="imgtext"></div>
+      </div>
+
+      <!-- The grid: four columns -->
+      <div class="tab_row">
+        <div class="tab_column">
+          <img src="./static/images/oasis-axial_hr.jpg" onclick="tab_gallery_click('oasis', 'axial', 'lr', 'rrdbgan');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/oasis-coronal_hr.jpg" onclick="tab_gallery_click('oasis', 'coronal', 'lr', 'rrdbgan');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/oasis-sagittal_hr.jpg" onclick="tab_gallery_click('oasis', 'sagittal', 'lr', 'rrdbgan');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/hcp1200-axial_hr.jpg" onclick="tab_gallery_click('hcp1200', 'axial', 'lr', 'rrdbgan');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/hcp1200-coronal_hr.jpg" onclick="tab_gallery_click('hcp1200', 'coronal', 'lr', 'rrdbgan');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/hcp1200-sagittal_hr.jpg" onclick="tab_gallery_click('hcp1200', 'sagittal', 'lr', 'rrdbgan');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/msd6-axial_hr.jpg" onclick="tab_gallery_click('msd6', 'axial', 'lr', 'rrdbgan');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/msd6-coronal_hr.jpg" onclick="tab_gallery_click('msd6', 'coronal', 'lr', 'rrdbgan');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/msd6-sagittal_hr.jpg" onclick="tab_gallery_click('msd6', 'sagittal', 'lr', 'rrdbgan');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/micebrain-axial_hr.jpg" onclick="tab_gallery_click('micebrain', 'axial', 'lr', 'rrdbgan');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/micebrain-coronal_hr.jpg" onclick="tab_gallery_click('micebrain', 'coronal', 'lr', 'rrdbgan');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/micebrain-sagittal_hr.jpg" onclick="tab_gallery_click('micebrain', 'sagittal', 'lr', 'rrdbgan');">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <h2 class="title is-3">Sample output (HR vs. SR)</h2>
+      <div class="has-text-justified">
+      <p>
+        This section shows similarity between ground-truth image and synthetically generated by our super-resolution method. Left image is ground-truth image. Right image is synthetic image from our model.
+      </p>
+      </div>
+      <!-- The expanding image container -->
+      <div class="tab_container">
+        <!-- Close the image -->
+        <!-- <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span> -->
+
+        <!-- Expanded image -->
+        <div id="juxtapose-embed-hr" data-startingposition="30%" data-animate="true">
+        </div>
+
+        <div>
+          <div id="juxtapose-hidden"></div>
+        </div>
+        
+        <!-- Image text -->
+        <div id="imgtext"></div>
+      </div>
+
+      <!-- The grid: four columns -->
+      <div class="tab_row">
+        <div class="tab_column">
+          <img src="./static/images/oasis-axial_hr.jpg" onclick="tab_gallery_click_hr('oasis', 'axial', 'hr', 'rrdbgan');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/oasis-coronal_hr.jpg" onclick="tab_gallery_click_hr('oasis', 'coronal', 'hr', 'rrdbgan');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/oasis-sagittal_hr.jpg" onclick="tab_gallery_click_hr('oasis', 'sagittal', 'hr', 'rrdbgan');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/hcp1200-axial_hr.jpg" onclick="tab_gallery_click_hr('hcp1200', 'axial', 'hr', 'rrdbgan');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/hcp1200-coronal_hr.jpg" onclick="tab_gallery_click_hr('hcp1200', 'coronal', 'hr', 'rrdbgan');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/hcp1200-sagittal_hr.jpg" onclick="tab_gallery_click_hr('hcp1200', 'sagittal', 'hr', 'rrdbgan');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/msd6-axial_hr.jpg" onclick="tab_gallery_click_hr('msd6', 'axial', 'hr', 'rrdbgan');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/msd6-coronal_hr.jpg" onclick="tab_gallery_click_hr('msd6', 'coronal', 'hr', 'rrdbgan');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/msd6-sagittal_hr.jpg" onclick="tab_gallery_click_hr('msd6', 'sagittal', 'hr', 'rrdbgan');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/micebrain-axial_hr.jpg" onclick="tab_gallery_click_hr('micebrain', 'axial', 'hr', 'rrdbgan');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/micebrain-coronal_hr.jpg" onclick="tab_gallery_click_hr('micebrain', 'coronal', 'hr', 'rrdbgan');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/micebrain-sagittal_hr.jpg" onclick="tab_gallery_click_hr('micebrain', 'sagittal', 'hr', 'rrdbgan');">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  
+    <!--/ Matting. -->
+    <div class="container is-max-desktop">
+    
+    <!-- Latent space editing applications -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">GAN architecture</h2>
+        <p>
+          In our GAN architecture, we used 3D RRDB-Net for generator. This generator takes low-resolution (LR) input and synthetically upsamples to 4x super-resolved (SR) output.
+          <br>
+          For discriminator, we used 3D U-Net allowing pixel-wise discrimination between real vs. fake image.
+
+        </p>
+        <div class="content has-text-centered">
+            <img src="./static/images/model_arch_vertical.png">
+        </div>
+        <!-- Prompt Interpolation image -->
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title"><a id="bibtex">BibTeX</a></h2>
+    <pre><code>@inproceedings{kang2023gigagan,
+  author    = {Kang, Minguk and Zhu, Jun-Yan and Zhang, Richard and Park, Jaesik and Shechtman, Eli and Paris, Sylvain and Park, Taesung},
+  title     = {Scaling up GANs for Text-to-Image Synthesis},
+  booktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2023},
+}</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Website adapted from the following <a href="https://mingukkang.github.io/GigaGAN/">website</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="juxtapose/js/juxtapose.js"></script>
+
+<script>
+var slider;
+let origImagesLR = [
+  {"src": "./static/images/oasis-axial_lr.jpg", "label": "Input LR image",},
+  {"src": "./static/images/oasis-axial_rrdbgan.jpg", "label": "Super-resolved (x4) by our method",}
+];
+let origImagesHR = [
+  {"src": "./static/images/oasis-axial_hr.jpg", "label": "Ground Truth HR image",},
+  {"src": "./static/images/oasis-axial_rrdbgan.jpg", "label": "Super-resolved (x4) by our method",}
+];
+
+let origOptions = {
+    "makeResponsive": true,
+    "showLabels": true,
+    "mode": "horizontal",
+    "showCredits": true,
+    "animate": true,
+    "startingPosition": "50"
+};
+
+const juxtaposeSelector = "#juxtapose-embed";
+const juxtaposeSelectorHR = "#juxtapose-embed-hr";
+const transientSelector = "#juxtapose-hidden"; 
+
+function tab_gallery_click(modality, viewname, key1, key2) {
+  // Get the expanded image
+  let inputImage = {
+    label: "Input LR image",
+  };
+  let outputImage = {
+    label: "Super-resolved (x4) by our method",
+  };
+
+  inputImage.src = "./static/images/".concat(modality, "-", viewname, "_", key1 + ".jpg")
+  outputImage.src = "./static/images/".concat(modality, "-", viewname, "_" + key2 + ".jpg")
+
+  let images = [inputImage, outputImage];
+  let options = slider.options;
+  options.callback = function(obj) {
+      var newNode = document.getElementById(obj.selector.substring(1));
+      var oldNode = document.getElementById(juxtaposeSelector.substring(1));
+      console.log(juxtaposeSelector.substring(1));
+      console.log(obj.selector.substring(1));
+      oldNode.replaceChild(newNode.children[0], oldNode.children[0]);
+      //newNode.removeChild(newNode.children[0]);
+  };
+  slider = new juxtapose.JXSlider(transientSelector, images, options);
+};
+
+function tab_gallery_click_hr(modality, viewname, key1, key2) {
+  // Get the expanded image
+  let inputImage = {
+    label: "Ground Truth HR image",
+  };
+  let outputImage = {
+    label: "Super-resolved (x4) by our method",
+  };
+
+  inputImage.src = "./static/images/".concat(modality, "-", viewname, "_", key1 + ".jpg")
+  outputImage.src = "./static/images/".concat(modality, "-", viewname, "_" + key2 + ".jpg")
+
+  let images = [inputImage, outputImage];
+  let options = sliderhr.options;
+  options.callback = function(obj) {
+      var newNode = document.getElementById(obj.selector.substring(1));
+      var oldNode = document.getElementById(juxtaposeSelectorHR.substring(1));
+      console.log(juxtaposeSelectorHR.substring(1));
+      console.log(obj.selector.substring(1));
+      oldNode.replaceChild(newNode.children[0], oldNode.children[0]);
+      //newNode.removeChild(newNode.children[0]);
+  };
+  sliderhr = new juxtapose.JXSlider(transientSelector, images, options);
+};
+
+(function() {
+    slider = new juxtapose.JXSlider(
+        juxtaposeSelector, origImagesLR, origOptions);
+    //document.getElementById("left-button").onclick = replaceLeft;
+    //document.getElementById("right-button").onclick = replaceRight;
+})();
+
+(function() {
+    sliderhr = new juxtapose.JXSlider(
+        juxtaposeSelectorHR, origImagesHR, origOptions);
+    //document.getElementById("left-button").onclick = replaceLeft;
+    //document.getElementById("right-button").onclick = replaceRight;
+})();
+
+  // Get the image text
+  var imgText = document.getElementById("imgtext");
+  // Use the same src in the expanded image as the image being clicked on from the grid
+  // expandImg.src = imgs.src;
+  // Use the value of the alt attribute of the clickable image as text inside the expanded image
+  imgText.innerHTML = name;
+  // Show the container element (hidden with CSS)
+  // expandImg.parentElement.style.display = "block";
+
+
+$(".flip-card").click(function() {
+            console.log("fading in")
+            div_back = $(this).children().children()[1]
+            div_front = $(this).children().children()[0]
+            // console.log($(this).children("div.flip-card-back"))
+            console.log(div_back)
+            $(div_front).addClass("out");
+            $(div_front).removeClass("in");
+
+            $(div_back).addClass("in");
+            $(div_back).removeClass("out");
+
+});
+
+$(".flip-card").mouseleave(function() {
+            console.log("fading in")
+            div_back = $(this).children().children()[1]
+            div_front = $(this).children().children()[0]
+            // console.log($(this).children("div.flip-card-back"))
+            console.log(div_back)
+            $(div_front).addClass("in");
+            $(div_front).removeClass("out");
+
+            $(div_back).addClass("out");
+            $(div_back).removeClass("in");
+
+});
+
+</script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>    
+
+</body>
+</html>
